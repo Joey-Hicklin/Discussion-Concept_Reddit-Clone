@@ -329,8 +329,23 @@
         sr_path=(thing.promoted is None),
         a_class=unsafe("bylink %s" % thing.commentcls),
         event_action="comments")}
+    </li>    
+  %endif
+  
+  ########temp#####
+  %if thing.show_discussions:
+  	
+    <li class="second">
+    ${self.bylink_button(
+        thing.discussion_label,
+        thing.permalink,
+        sr_path=(thing.promoted is None),
+        a_class=unsafe("bylink %s" % thing.discussioncls),
+        event_action="discussions")}
     </li>
   %endif
+  #########temp########
+  
   %if thing.editable and not thing.promoted:
     <li>
       ${self.simple_button(_("edit"), "edit_usertext", css_class="edit-usertext")}

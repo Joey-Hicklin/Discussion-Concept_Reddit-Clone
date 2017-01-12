@@ -809,6 +809,8 @@ class Link(Thing, Printable):
             item.num_text = CachedVariable("num")
             item.commentcls = CachedVariable("commentcls")
             item.comment_label = CachedVariable("numcomments")
+            item.discussioncls = CachedVariable("discussioncls")
+            item.discussion_label = CachedVariable("numdiscussions")
             item.lastedited = CachedVariable("lastedited")
 
             item.as_deleted = False

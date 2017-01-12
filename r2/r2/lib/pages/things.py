@@ -83,7 +83,7 @@ class BanButtons(PrintableButtons):
         PrintableButtons.__init__(self, "banbuttons", thing)
 
 class LinkButtons(PrintableButtons):
-    def __init__(self, thing, comments = True, delete = True, report = True):
+    def __init__(self, thing, comments = True, discussions = True, delete = True, report = True):
         # is the current user the author?
         is_author = (c.user_is_loggedin and thing.author and
                      c.user.name == thing.author.name)
@@ -163,7 +163,9 @@ class LinkButtons(PrintableButtons):
                                   is_loggedin = c.user_is_loggedin,
                                   # comment link params
                                   comment_label = thing.comment_label,
+                                  discussion_label = thing.discussion_label,
                                   commentcls = thing.commentcls,
+                                  discussioncls = thing.discussioncls,
                                   permalink  = permalink,
                                   # button visibility
                                   saved = thing.saved,
@@ -185,6 +187,7 @@ class LinkButtons(PrintableButtons):
                                   show_rescrape=show_rescrape,
                                   show_givegold=show_givegold,
                                   show_comments = comments,
+                                  show_discussions = discussions,
                                   show_share=show_share,
                                   # promotion
                                   promoted = thing.promoted,
